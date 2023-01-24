@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-app';
+  randomText : string = "No one can outrun their destiny";
+
+  testText : string = "";
+
+  result : string = "";
+
+  checkResult(event : Event){
+    this.testText = (event.target as HTMLInputElement).value;
+    if(this.randomText == this.testText){
+      this.result = "correct";
+    }else{
+      this.result = "incorrect";
+    }
+  }
 }
